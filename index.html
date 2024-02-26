@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Classes</title>
+    <link rel="stylesheet" href="assets/css/app.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Car Manufacturer</h1>
+      <p>
+        This code defines two classes, Car and RaceCar, which represent a car
+        and a race car, respectively. Both classes have a constructor that takes
+        parameters for color and manufacturer. The RaceCar class extends the Car
+        class and adds an additional parameter for the number of seats.
+      </p>
+      <input
+        type="text"
+        id="carColor"
+        placeholder="Car Color eg: red,green,.."
+      />
+      <input
+        type="text"
+        id="carManufacturer"
+        placeholder="Car Manufacturer eg
+      :Audi,Toyota..."
+      />
+      <input
+        type="number"
+        id="racecarSeats"
+        placeholder="Race Car Seats eg:1,2,3..."
+      />
+      <input
+        type="text"
+        id="racecarManufacturer"
+        placeholder="Race Car Manufacturer eg:Ferrari,Mercedes..."
+      />
+      <button onclick="updateValues()">Update Values</button>
+    </div>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
