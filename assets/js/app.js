@@ -1,39 +1,35 @@
-class Car {
-  constructor(color, manufacturer) {
-    this.color = color;
-    this.manufacturer = manufacturer;
+function car() {
+  var inputElement = document.getElementById("inputString");
+  var inputNumElement = document.getElementById("inputNum");
+  var resultElement = document.getElementById("result");
+
+  class Car {
+    constructor(color, manufacturer) {
+      this.color = color;
+      this.manufacturer = manufacturer;
+    }
   }
-}
 
-class RaceCar extends Car {
-  constructor(numberofSeats, manufacturer) {
-    super(null, manufacturer);
-    this.numberofSeats = numberofSeats;
+  class RaceCar extends Car {
+    constructor(numberOfSeats, manufacturer) {
+      super("Red", manufacturer);
+      this.numberOfSeats = numberOfSeats;
+    }
   }
-}
 
-const car1 = new Car("Red", "Audi");
-const racecar1 = new RaceCar(5, "BMW");
+  // Check if the input element value is empty
+  if (inputElement.value.trim() === "" || inputNumElement.value.trim() === "") {
+    resultElement.innerHTML =
+      "Error: Please enter a valid color and manufacturer.";
+    return;
+  }
 
-function updateValues() {
-  const carColor = document.getElementById("carColor").value;
-  const carManufacturer = document.getElementById("carManufacturer").value;
-  const racecarSeats = document.getElementById("racecarSeats").value;
-  const racecarManufacturer = document.getElementById(
-    "racecarManufacturer"
-  ).value;
+  const car1 = new Car(inputElement.value, inputNumElement.value);
+  const raceCar1 = new RaceCar(2, "Audi");
 
-  car1.color = carColor;
-  car1.manufacturer = carManufacturer;
-  racecar1.numberofSeats = racecarSeats;
-  racecar1.manufacturer = racecarManufacturer;
+  console.log(car1);
+  console.log(raceCar1);
 
-  document.body.innerHTML = `
-      <div class="car">
-          <p>Car 1: Color: ${car1.color}, Manufacturer: ${car1.manufacturer}</p>
-      </div>
-      <div class="racecar">
-          <p>Race Car 1: Number of Seats: ${racecar1.numberofSeats}, Manufacturer: ${racecar1.manufacturer}</p>
-      </div>
-  `;
+  // Display the result in the resultElement
+  resultElement.innerHTML = `Car: ${car1.color} ${car1.manufacturer}<br>Race Car: ${raceCar1.color} ${raceCar1.manufacturer} ${raceCar1.numberOfSeats} seats`;
 }

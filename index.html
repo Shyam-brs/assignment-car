@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Car Classes</title>
+    <title>Car Example</title>
     <link rel="stylesheet" href="assets/css/app.css" />
   </head>
   <body>
@@ -15,29 +13,16 @@
         parameters for color and manufacturer. The RaceCar class extends the Car
         class and adds an additional parameter for the number of seats.
       </p>
-      <input
-        type="text"
-        id="carColor"
-        placeholder="Car Color eg: red,green,.."
-      />
-      <input
-        type="text"
-        id="carManufacturer"
-        placeholder="Car Manufacturer eg
-      :Audi,Toyota..."
-      />
+      <input type="text" id="inputString" placeholder="Enter a color" />
       <input
         type="number"
-        id="racecarSeats"
-        placeholder="Race Car Seats eg:1,2,3..."
+        id="inputNum"
+        placeholder="Enter a number of seats"
       />
-      <input
-        type="text"
-        id="racecarManufacturer"
-        placeholder="Race Car Manufacturer eg:Ferrari,Mercedes..."
-      />
-      <button onclick="updateValues()">Update Values</button>
+      <button onclick="car()">Create Car</button>
+      <div id="result"></div>
     </div>
+
     <script src="assets/js/app.js"></script>
   </body>
 </html>
